@@ -7,9 +7,9 @@
         {{mensagem}}
         <div class="row">
             <div class="col-lg-6 col-md-8">
-                <form>
+                <form action="../brasileirao/gerenciar-equipe.php" method="post">
                     <input type = "hidden" name="delete" value="1">
-                    <table class = "table table-bordered" >
+                    <table class = "table table-bordered table-striped" >
                         <thead class="thead" >
                         <th>ID</th>
                         <th>Esporte</th>
@@ -18,7 +18,7 @@
                         <th>presidente</th>
                         <th colspan="3">Gerenciar</th>
                         </thead>
-                        <thead>
+                        <tbody>
                             {% for equipe in equipes %}
                                 <tr style="text-align:center;" >
                             <input type = "hidden" name="equipe_id" id="equipe" value="{{equipe.id}}"/>
@@ -37,7 +37,7 @@
                             <td><a href = "../gerenciar-equipes-brasileirao/atletaEpatrocinio.php?equipe_id={{equipe.id}}" class = "btn btn-default navbar-btn">Patrocinio e Atleta</a></td>
                             </tr>
                         {% endfor %}
-                        </thead>
+                        </tbody>
                     </table>
                 </form>
             </div>

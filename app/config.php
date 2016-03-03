@@ -18,7 +18,7 @@ function pesquisarUnico($sql) {
 
 function inserir($sql) {
     $conexao = conectar();
-    $statement = $conexao->exec($sql);
+    $conexao->exec($sql);
     return $conexao->lastInsertId();
 }
 function excluir($sql) {
@@ -28,7 +28,7 @@ function excluir($sql) {
 }
 function editar($sql) {
     $conexao = conectar();
-    $statement = $conexao->query($sql);
+    $conexao->query($sql);
 }
 
 Twig_Autoloader::register();

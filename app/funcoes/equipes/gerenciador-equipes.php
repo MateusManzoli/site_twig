@@ -56,7 +56,6 @@ function editarEquipe($dados) {
 
 function excluirEquipe($id) {
     $excluir = "DELETE FROM aprendizagem.equipe WHERE id = $id";
-    var_dump($excluir);
     return excluir($excluir);
 }
 
