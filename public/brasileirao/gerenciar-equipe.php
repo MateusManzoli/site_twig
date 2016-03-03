@@ -8,8 +8,8 @@ try {
     $usuario = array();
     $retorno = "";
 
-    if (!empty($_POST['excluir'])) {
-        excluirEquipe($_POST['excluir']);
+    if (!empty($_POST['delete'])) {
+        excluirEquipe($_POST['equipe_id']);
         $retorno = "Equipe Excluir com êxito";
     }
 } catch (Exception $e) {

@@ -51,12 +51,12 @@ function editarEquipe($dados) {
             cidade = '" . addslashes($dados['cidade']) . "',
             presidente = '" . addslashes($dados['presidente']) . "'
             where id = {$dados['id']} ";
-    echo $editar;
     return editar($editar);
 }
 
 function excluirEquipe($id) {
-    $excluir = "delete from `aprendizagem`.`equipe` where id = $id";
+    $excluir = "DELETE FROM aprendizagem.equipe WHERE id = $id";
+    var_dump($excluir);
     return excluir($excluir);
 }
 

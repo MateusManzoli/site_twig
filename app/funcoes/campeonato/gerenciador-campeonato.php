@@ -27,12 +27,13 @@ function cadastrarCampeonato($dados) {
         INSERT INTO aprendizagem.campeonato SET
             nome = '" . addslashes($dados['nome']) . "',
             quantidade_rodada = '" . addslashes($dados['quantidade']) . "'";
+    echo $cadastrar;
     return inserir($cadastrar);
 }
 
 function verificar($nome) {
     $campeonato = "select * from aprendizagem.campeonato where nome = '{$nome}'";
-    $verificar = pesquisar($nome);
+    $verificar = pesquisar($campeonato);
     return $verificar;
 }
 

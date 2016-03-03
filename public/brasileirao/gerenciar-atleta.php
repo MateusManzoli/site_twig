@@ -10,7 +10,7 @@ try {
 
     if (!empty($_POST['delete'])) {
         excluirAtleta($_POST['id_atleta']);
-        $retorno = "Atleta cadastrado com êxito";
+        $retorno = "Atleta excluido com êxito";
     }
 } catch (Exception $e) {
     $retorno = $e->getMessage();
