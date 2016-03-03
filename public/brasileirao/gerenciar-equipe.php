@@ -2,6 +2,7 @@
 
 include_once '../../dados/dados-head.php';
 include_once '../../app/funcoes/equipes/gerenciador-equipes.php';
+include_once '../../app/funcoes/tipo-noticia/gerenciar-tipoNoticia.php';
 
 try {
     $usuario = array();
@@ -14,13 +15,16 @@ try {
 } catch (Exception $e) {
     $retorno = $e->getMessage();
 }
+
+$categorias = buscarCategorias();
 $login = isset($_SESSION['logado']);
 $equipes = buscarEquipes();
 
 renderTemplate('listagem_equipe', array(
     'equipes' => $equipes,
     'login' => $login,
-    'mensagem' => $retorno
+    'mensagem' => $retorno,
+    'categorias' => $categorias
 ));
 ?>
 

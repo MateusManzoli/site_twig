@@ -3,6 +3,7 @@
 include_once '../../dados/dados-head.php';
 include_once '../../app/funcoes/equipes/gerenciador-equipes.php';
 include_once '../../app/funcoes/atletas/gerenciador-atletas.php';
+include_once '../../app/funcoes/tipo-noticia/gerenciar-tipoNoticia.php';
 
 
 try {
@@ -33,6 +34,7 @@ try {
 $equipe = buscarEquipe($_REQUEST['equipe_id']);
 $login = isset($_SESSION['logado']);
 
+$categorias = buscarCategorias();
 
 $patrocinadores = selecionarPatrocinio();
 $atletas = buscarAtletas();
@@ -43,5 +45,6 @@ renderTemplate('patrocinio', array(
     'patrocinadores' => $patrocinadores,
     'mensagem' => $retorno,
     'login' => $login,
-    'retorno' => $mensagem
+    'retorno' => $mensagem,
+    'categorias' => $categorias
 ));

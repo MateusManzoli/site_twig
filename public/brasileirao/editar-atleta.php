@@ -2,6 +2,7 @@
 
 include_once '../../dados/dados-head.php';
 include_once '../../app/funcoes/atletas/gerenciador-atletas.php';
+include_once '../../app/funcoes/tipo-noticia/gerenciar-tipoNoticia.php';
 
 
 try {
@@ -17,6 +18,7 @@ try {
     $retorno = $e->getMessage();
 }
 
+$categorias = buscarCategorias();
 $atleta = buscarAtleta($_GET['id']);
 $login = isset($_SESSION['logado']);
 
@@ -24,6 +26,7 @@ $login = isset($_SESSION['logado']);
 renderTemplate('editar_atleta', array(
     'atleta' => $atleta,
     'login' => $login,
-    'mensagem' => $retorno
+    'mensagem' => $retorno,
+    'categorias' => $categorias
 ));
 ?>

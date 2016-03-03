@@ -18,11 +18,14 @@ try {
 } catch (Exception $e) {
     $retorno = $e->getMessage();
 }
+
+$categorias = buscarCategorias();
 $partidas = buscarPartidaEquipes();
 $login = isset($_SESSION['logado']);
 
 renderTemplate('listagem_partida', array(
     'partidas' => $partidas,
     'login' => $login,
-    'mensagem' => $retorno
+    'mensagem' => $retorno,
+    'categorias' => $categorias
 ));

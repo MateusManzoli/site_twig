@@ -2,6 +2,7 @@
 
 include_once '../../dados/dados-head.php';
 include_once '../../app/funcoes/atletas/gerenciador-atletas.php';
+include_once '../../app/funcoes/tipo-noticia/gerenciar-tipoNoticia.php';
 
 try {
     $usuario = array();
@@ -14,12 +15,15 @@ try {
 } catch (Exception $e) {
     $retorno = $e->getMessage();
 }
+
+$categorias = buscarCategorias();
 $login = isset($_SESSION['logado']);
 $atletas = buscarAtletas();
 
 renderTemplate('listagem_atleta', array(
     'atletas' => $atletas,
     'login' => $login,
-    'mensagem' => $retorno
+    'mensagem' => $retorno,
+    'categorias' => $categorias
 ));
 ?>

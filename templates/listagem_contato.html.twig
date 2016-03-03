@@ -1,40 +1,44 @@
 {% extends "template.html.twig" %}
 {% block styleSheet %}
-    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/gerenciar-faleConosco.css"/>
+    <link rel="stylesheet" type="text/css" href="../estilos-paginas/gerenciar-faleConosco.css"/>
 {% endblock %}
 {% block body %}
     <div class="geral">
-        <form method="post" action="gerenciar.php" style="width: 500px;">
-            <input type="hidden" name="deletar" value="1"/>
-            <table class="table table-bordered">
-                <thead class="thead">
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Nascimento</th>
-                <th>Cidade</th>
-                <th>Logradouro</th>
-                <th>Estado</th>
-                <th>Assunto</th>
-                <th>Mensagem</th>
-                </thead>
-                {% for solicitacao in solicitacoes %}
-                    <tr>
-                        <td>{{solicitacao.id}}</td>
-                        <td>{{solicitacao.nome}}</td>
-                        <td>{{solicitacao.email}}</td>
-                        <td>{{solicitacao.nascimento}}</td>
-                        <td>{{solicitacao.cidade}}</td>
-                        <td>{{solicitacao.logradouro}}</td>
-                        <td>{{solicitacao.estado}}</td>
-                        <td>{{solicitacao.assunto}}</td>
-                        <td><textarea style="width: 150px;" disabled>{{solicitacao.mensagem}}</textarea></td>
-                        <!-- é necessario que o button tenha um name-->
-                        <td><button name="id" type="submit" class="btn btn-default navbar-btn" value="{{solicitacao.id}}">Excluir</button></td>
-                        <td><a href="responder.php?id={{solicitacao.id}}" class="btn btn-default navbar-btn">Responder</a></td>
-                    </tr>
-                {% endfor %}
-            </table>
+        <form method="post" action="gerenciar.php" style="width: 400px;">
+            <div class="row">
+                <div class="col-lg-6 col-md-8">
+                    <input type="hidden" name="publicar" value="1"/>
+                    {{mensagem}}
+                    <table class="table table-condensed">
+                        <thead>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Cidade</th>
+                        <th>Logradouro</th>
+                        <th>Estado</th>
+                        <th>Assunto</th>
+                        <th>Mensagem</th>
+                        </thead>
+                        {% for solicitacao in solicitacoes %} 
+                            <tbody>
+                            <td>{{solicitacao.id}}</td>
+                            <td>{{solicitacao.nome}}</td>
+                            <td>{{solicitacao.email}}</td>
+                            <td>{{solicitacao.cidade}}</td>
+                            <td>{{solicitacao.logradouro}}</td>
+                            <td>{{solicitacao.estado}}</td>
+                            <td>{{solicitacao.assunto}}</td>
+                            <td><textarea style="width: 150px;" disabled>{{solicitacao.mensagem}}</textarea></td>
+                            <!-- é necessario que o button tenha um name-->
+                            <td><button name="id" type="submit" class="btn btn-default navbar-btn" value="{{solicitacao.id}}">Excluir</button></td>
+                            <td><a href="responder.php?id={{solicitacao.id}}" class="btn btn-default navbar-btn">Responder</a></td>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
         </form>
     </div>
+
 {% endblock %}
+

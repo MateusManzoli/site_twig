@@ -2,6 +2,7 @@
 
 include_once '../../dados/dados-head.php';
 include_once '../../app/funcoes/login/gerenciador-login.php';
+include_once '../../app/funcoes/tipo-noticia/gerenciar-tipoNoticia.php';
 
 try {
     $usuario = array();
@@ -15,10 +16,12 @@ try {
     $retorno = $e->getMessage();
 }
 
+$categorias = buscarCategorias();
 $login = isset($_SESSION['logado']);
 
 renderTemplate('cadastro_usuario', array(
     'login' => $login,
-    'mensagem' => $retorno
+    'mensagem' => $retorno,
+    'categorias' => $categorias
 ));
 

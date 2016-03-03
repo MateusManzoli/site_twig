@@ -21,4 +21,3 @@ renderTemplate('conteudo', array(
     'login' => $login,
     'categorias' => $categorias
 ));
-

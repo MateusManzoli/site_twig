@@ -2,6 +2,7 @@
 
 include_once '../../dados/dados-head.php';
 include_once '../../app/funcoes/partida-gol/gerenciador_partidaGol.php';
+include_once '../../app/funcoes/tipo-noticia/gerenciar-tipoNoticia.php';
 
 try {
     $usuario = array();
@@ -15,11 +16,13 @@ try {
     $retorno = $e->getMessage();
 }
 
+$categorias = buscarCategorias();
 $gols = buscarPartidaGols();
 $login = isset($_SESSION['logado']);
 
 renderTemplate('listagem_golPartida', array(
     'gols' => $gols,
     'login' => $login,
-    'mensagem' => $retorno
+    'mensagem' => $retorno,
+    'categorias' => $categorias
 ));

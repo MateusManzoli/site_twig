@@ -4,8 +4,6 @@ include_once '../../dados/dados-head.php';
 include_once '../../app/funcoes/noticia/gerenciador-noticias.php';
 include_once '../../app/funcoes/tipo-noticia/gerenciar-tipoNoticia.php';
 
-$categorias = buscarCategorias();
-
 try {
     $usuario = array();
     $retorno = "";
@@ -18,10 +16,11 @@ try {
     $retorno = $e->getMessage();
 }
 
+$categorias = buscarCategorias();
 $login = isset($_SESSION['logado']);
 
 renderTemplate('cadastro_noticia', array(
     'categorias' => $categorias,
     'login' => $login,
-    'mensagem' => $retorno
+    'mensagem' => $retorno,
 ));

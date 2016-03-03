@@ -2,6 +2,7 @@
 
 include_once '../../dados/dados-head.php';
 include_once '../../app/funcoes/rodada/gerenciador-rodada.php';
+include_once '../../app/funcoes/tipo-noticia/gerenciar-tipoNoticia.php';
 
 try {
     $retorno = "";
@@ -14,12 +15,13 @@ try {
     $retorno = $e->getMessage();
 }
 
+$categorias = buscarCategorias();
 $rodada = buscarRodada($_GET['rodada_id']);
 $login = isset($_SESSION['logado']);
 
 renderTemplate('editar_rodada', array(
     'rodada' => $rodada,
     'login' => $login,
-    'mensagem' => $retorno
+    'mensagem' => $retorno,
+    'categorias' => $categorias
 ));
-

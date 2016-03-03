@@ -4,6 +4,7 @@ include_once '../../dados/dados-head.php';
 include_once '../../app/funcoes/partida/gerenciar-partida.php';
 include_once '../../app/funcoes/rodada/gerenciador-rodada.php';
 include_once '../../app/funcoes/campeonato/gerenciador-campeonato.php';
+include_once '../../app/funcoes/tipo-noticia/gerenciar-tipoNoticia.php';
 
 try {
     $usuario = array();
@@ -17,6 +18,7 @@ try {
     $retorno = $e->getMessage();
 }
 
+$categorias = buscarCategorias();
 $date = date('d/m/Y');
 $horario = date('H:i:s');
 $rodadas = buscarRodadas();
@@ -27,5 +29,6 @@ renderTemplate('cadastro_partida', array(
     'date' => $date,
     'horario' => $horario,
     'login' => $login,
-    'mensagem' => $retorno
+    'mensagem' => $retorno,
+    'categorias' => $categorias
 ));

@@ -18,6 +18,7 @@ try {
     $retorno = $e->getMessage();
 }
 
+
 $login = isset($_SESSION['logado']);
 $categorias = buscarCategorias();
 

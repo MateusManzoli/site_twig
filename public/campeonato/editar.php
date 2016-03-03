@@ -2,6 +2,8 @@
 
 include_once '../../dados/dados-head.php';
 include_once '../../app/funcoes/campeonato/gerenciador-campeonato.php';
+include_once '../../app/funcoes/tipo-noticia/gerenciar-tipoNoticia.php';
+
 try {
     $usuario = array();
     $retorno = "";
@@ -15,11 +17,13 @@ try {
     $retorno = $e->getMessage();
 }
 
+$categorias = buscarCategorias();
 $campeonato = buscarCampeonato($_GET['id']);
 $login = isset($_SESSION['logado']);
 
 renderTemplate('editar_campeonato', array(
     'campeonato' => $campeonato,
     'login' => $login,
-    'mensagem' => $retorno
+    'mensagem' => $retorno,
+    'categorias' => $categorias
 ));
