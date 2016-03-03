@@ -4,6 +4,7 @@ error_reporting(0);
 ini_set('display_errors', 0);
 include_once '../../dados/dados-head.php';
 include_once '../../app/funcoes/calculo-imc/gerenciarCalculoImc.php';
+include_once '../../app/funcoes/tipo-noticia/gerenciar-tipoNoticia.php';
 
 try {
     $usuario = array();
@@ -18,9 +19,11 @@ try {
 }
 
 $login = isset($_SESSION['logado']);
+$categorias = buscarCategorias();
 
 renderTemplate('imc', array(
     'calculo' => $calculo,
     'login' => $login,
-    'mensagem' => $retorno
+    'mensagem' => $retorno,
+    'categorias' => $categorias
 ));
