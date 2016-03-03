@@ -1,0 +1,36 @@
+{% extends "template.html.twig" %}
+{% block styleSheet %}
+    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/cadastro-atleta.css"/>
+{% endblock %}
+{% block body %}
+    <form class="form-horizontal-a" method="post" action="../campeonato/editar.php?id={{campeonato.id}}" style="width: 700px;"> 
+        {{mensagem}}
+        <input type="hidden" name="id" value="{{campeonato.id}}"/>
+        <h3>Modificando o Campeonato</h3>
+        <div class="form-group-a">
+            <label  class="col-sm-2 control-label">Nome</label>
+            <div class="col-sm-10-a">
+                <input name="nome" type="text" class="form-control"  value="{{campeonato.nome}}">
+            </div>
+        </div>
+        <div class="form-group-a">
+            <label  class="col-sm-2 control-label">Quantidade(Rodada)</label>
+            <div class="col-sm-10-a">
+                <input name="quantidade" type="text" class="form-control"  value="{{campeonato.quantidade_rodada}}">
+            </div>
+        </div> 
+
+        <div class="form-group-b">
+            <div class="col-sm-offset-2 col-sm-10-a">
+                <button type="submit" class="btn btn-default">Alterar</button>
+            </div>
+        </div> 
+        <div class="col-sm-12 col-md-12">
+            <div class="form-group-b">
+                <div class="col-sm-offset-2 col-sm-12-a">
+                    <a href="gerenciar.php"> <button  Type="button" class="btn btn-default" >Voltar</button></a>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

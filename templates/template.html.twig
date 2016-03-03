@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-inverse navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <!-- <span class="sr-only">Toggle navigation</span> -->
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand " href="../inicial/index.php?categoria=#Noticias"><img src="../../imagens/noticias.jpg" style="width: 100px;"></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        {% for categoria in categorias%}
+                            <li>
+                            <li><a href="{{categoria.link}}?categoria={{categoria.id}}" name="{{categoria.nome}}" > {{categoria.nome}}</a></li>
+                            {% endfor %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Musicas<span class="caret"></span></a>
+                            <ul class="dropdown-menu">            
+                                {% if login == true %}
+                                    <li><a href="../musicas_aleatorias/musicas_aleatorias.php">Sertanejo Universitario</a></li>
+                                    {% else %}
+                                    <li><a href="#">Necessario Login</a></li>
+                                    {% endif %}
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brasileirao<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                {% if login == true %}
+                                    <li><a href="../brasileirao/cadastro-equipe.php">Cadastro Equipe</a></li>
+                                    <li><a href="../brasileirao/gerenciar-equipe.php">Gerenciar Equipes</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="../brasileirao/cadastro-atleta.php">Cadastro Atleta</a></li>
+                                    <li><a href="../brasileirao/gerenciar-atleta.php">Gerenciar Atletas</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="../campeonato/cadastrar-campeonato.php">Cadastrar Campeonato</a></li>
+                                    <li><a href="../campeonato/gerenciar.php">Gerenciar Campeonato</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="../rodada/cadastro-rodada.php">Cadastrar Rodada</a></li>
+                                    <li><a href="../rodada/gerenciar.php">Gerenciar Rodada</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="../partida/cadastro-partida.php">Cadastrar Partida</a></li>
+                                    <li><a href="../partida/gerenciar.php">Gerenciar Partida</a></li>
+                                    <li><a href="../gol_partida/gerenciar.php">Gols Partida</a></li>
+                                    {% else %}
+                                    <li><a href="../brasileirao/cadastro-equipe.php">Cadastro Equipe</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="../brasileirao/cadastro-atleta.php">Cadastro Atleta</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="../campeonato/cadastrar-campeonato.php">Cadastrar Campeonato</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="../rodada/cadastro-rodada.php">Cadastrar Rodada</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="../partida/cadastro-partida.php">Cadastrar Partida</a></li>
+                                    {% endif %}
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gerenciar<span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+                                {% if login == true %}
+                                    <li><a href="../fale-conosco/contato.php">Fale Conosco</a></li>
+                                    <li><a href="../fale-conosco/gerenciar.php">Solicitacoes</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="../usuarios/cadastro.php">Cadastre-se</a></li>
+                                    <li><a href="../usuarios/listagem_usuario.php">Gerenciar Usuario</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="../noticias/cadastro.php">Cadastrar Noticia</a></li>
+                                    <li><a href="../noticias/gerenciar.php">Gerenciar Noticias</a></li>
+                                    {% else %}
+                                    <li><a href="../fale-conosco/contato.php">Fale Conosco</a></li>
+                                    <li><a href="../usuarios/cadastro.php">Cadastre-se</a></li>
+                                    {% endif %}
+                            </ul>
+                    </ul>
+                    <form class="navbar-form navbar-right" action="../inicial/index.php" method="post">
+                        <input  type="text" name="pesquisa" class="form-control" placeholder="Pesquisar Por..."/>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="menulateral" style="color: #003">
+            {% if login == false %}
+                <form class="form-signin" action="../../public/login/processo_login.php" method="post">
+                    <div class="container">
+                        <h2 class="form-signin-heading">Realize o Login</h2>
+                        <label for="inputEmail" class="sr-only ">Email </label>
+                        <input name="email" type="email" id="inputEmail" class="form-control " placeholder="Email" required autofocus/>
+                        <label for="inputPassword" class="sr-only">Senha</label>
+                        <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required/>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="remember-me" /> Remember me
+                            </label>
+                        </div>
+                        <button class="btn btn-lg btn-default btn-block" type="submit">Entrar</button>
+                    </div> 
+                    <div class="cads">
+                        <a href="../usuarios/cadastro.php">cadastra-se</a> |
+                        <a href="#">esqueci a senha</a>
+                    </div>
+                </form>
+            {% else %}
+                <form class="form-horizontal" method="post" name="id" action="../login/sair.php">
+                    <input type="hidden" name="editar" value="1"/>
+                    <div class="form-group">
+                        <div 
+                            class="alert " role="alert">Bem vindo {{login.usuario}}
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">sair</button>
+                        </div>              
+                    </div>
+                </form>
+            {% endif %}
+            {% if login == true %}
+                <div class="link" >
+                    <a href="https://twitter.com" target="_blanck"> <img src="../../imagens/twitter.jpg"></a> 
+                    <a href="https://facebook.com" target="_blanck"> <img src="../../imagens/facebook.jpg"> </a>
+                    <a href="../../public/indiceMassa/imc.php"> <img src="../../imagens/calculo-imc.jpg"> </a>
+                </div>
+                <!-- tabela clima -->
+                <div class="clima" style="align: center; ">
+                    <br><iframe src="http://widget.tempoagora.com.br/selos/r7_2/Widget/" scrolling="no" frameborder="0" height="250"  style="padding-left: 7%; padding-top: 2%; width: 355px;"></iframe>
+                </div>
+
+                <a class="twitter-timeline"  href="https://twitter.com/search?q=%40AMBaviationpics" data-widget-id="704710718759772160">Tweets sobre @AMBaviationpics</a>
+                <script>!function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + "://platform.twitter.com/widgets.js";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, "script", "twitter-wjs");</script>
+                {% endif %}
+        </div>                    
+    {% block body %}{% endblock %}
+    <div class="rodape" style='width: 100%;'>
+        <ul class="nav">
+            {% for categoria in categorias%}
+                <li>
+                <li><a href="{{categoria.link}}?categoria={{categoria.id}}" name="{{categoria.nome}}" > {{categoria.nome}}</a></li>
+                {% endfor %}
+            <li><a href="../musicas_aleatorias/musicas_aleatorias.php">Musicas</a></li>
+        </ul>
+        <div style="width: 100%;">
+            <ul class="nav" style="background: #363636; color: darkgrey; text-align: center;">
+                <li>©  2015 Noticias - O seu portal de noticias. Todos os direitos reservados-Mateus Manzoli Giacomin</li>
+            </ul>
+        </div>
+    </div>   
+</div>

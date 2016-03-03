@@ -1,0 +1,29 @@
+{% extends "template.html.twig" %}
+{% block styleSheet %}
+    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/gerenciar-usuarios.css"/>
+{% endblock %}
+{% block body %}
+    <div class="geral">
+        <form method="post" action="gerenciar.php" style="width: 700px;">
+            <input type="hidden" name="campeonato" value="1"/>
+            {{mensagem}}
+            <table class="table table-bordered">
+                <thead class="thead">
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Quantidade de Rodadas</th>   
+                <th colspan="2">Gerenciar</th>
+                </thead>
+                {% for campeonato in campeonatos %}
+                    <tr style="text-align: center;">
+                        <td>{{campeonato.id}}</td>
+                        <td>{{campeonato.nome}}</td>
+                        <td>{{campeonato.quantidade_rodada}}</td>
+                        {{campeonato.id}}
+                        <td><a href="../campeonato/editar.php?id={{campeonato.id}}" class="btn btn-default navbar-btn">Editar</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </form>
+    </div>
+{% endblock %}

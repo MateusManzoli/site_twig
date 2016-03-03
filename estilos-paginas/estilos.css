@@ -1,0 +1,117 @@
+body{
+    background: #ebebeb;
+    font-size: 14.4px;
+}
+.noticias{
+    border-right: 1px solid #e0e0e0;
+    text-align: left;
+    float: left;
+}
+.noticias a{
+    color: black;
+}
+.row{
+    max-width: 855px;
+    float: left;
+}
+
+.thumbnail img{
+    float: left;
+    border-radius: 15px;
+}
+
+.pagination li a:hover{
+    background: #EEE;
+}
+.menulateral{
+    width: 380px;
+    float: right;
+    box-shadow: 3px 8px 8px -3px;
+    padding: 15px;
+}
+.menulateral img{
+    float: right;
+}
+.cads{
+    text-align: center;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid #CFCFCF;
+}
+.cads a{
+    color: #9D9D9D;
+}
+
+
+.link img{
+    margin-right: 35px;
+    width: 70px;
+    height: 70px;
+    padding: 7px;
+}
+
+.imgExpande {
+    list-style: none;
+    padding: 0;
+}
+
+.imgExpande li {
+    display: inline;
+}
+
+.imgExpande li img {
+    width: 70px; /* Aqui é o tamanho da imagem */
+    -moz-transition: 1s all ease; /* Firefox */
+    -webkit-transition: 1s all ease; /* É para pega no Chrome e Safira */
+    -moz-transition: 1s all ease; /* Firefox */
+    -o-transition: 1s all ease; /* Opera */
+}
+
+.imgExpande li img:hover {
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+.video video{
+    width: 300px;
+    border-radius: 10px;
+}
+
+.list-group a{
+    background-color: transparent;
+    text-align: center;
+    color: #9D9D9D;
+}
+.list-group a:hover{
+    background: #EEE;
+    color: #337AB7;
+}
+.rodape{
+    display: inline-block;
+    width: 1420px;
+    border-top: 1px solid #ddd;
+    background-color: #363636;
+}
+
+.nav li >a:focus, .nav li >a:hover{
+    background: #363636;
+    color: whitesmoke;
+}
+
+.rodape a{
+    color: #9D9D9D;
+}
+.rodape li{
+
+    color: #CFCFCF;
+}
+.rodape li:hover{
+    color: #CFCFCF;
+}
+.thumbnail > a  img{
+    width: 500px;
+    height: 190px;
+    border-radius: 15px;
+}
+

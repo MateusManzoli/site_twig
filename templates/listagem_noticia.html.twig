@@ -1,0 +1,36 @@
+{% extends "template.html.twig" %}
+{% block styleSheet %}
+    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/tabela_gerenciar-noticias.css"/>
+{% endblock %}
+{% block body %}
+    <div class="geral">
+        <form method="post" action="gerenciar.php" style="width: 900px;"> 
+            <input type="hidden" name="excluir" value="1"/>
+            {{mensagem}}
+            <table class="table table-bordered">
+                <thead class="thead">
+                    <tr>
+                        <th>ID</th>
+                        <th>Manchete</th>
+                        <th>Subtitulo</th>
+                        <th>Legenda_imagem</th>
+                        <th colspan="2">Gerenciar</th>
+                    </tr>
+                </thead>
+                {% for noticia in noticias %}
+                    <tbody>    
+                        <tr style="text-align: justify;">
+                            <td>{{noticia.id}}</td>
+                            <td>{{noticia.manchete}}</td>
+                            <td>{{noticia.subtitulo}}</td>
+                            <td>{{noticia.legenda_imagem}}</td>
+                            <!-- é necessario que o button tenha um name-->
+                            <td><button name="id_noticia" type="submit" class="btn btn-default navbar-btn  glyphicon glyphicon-remove" value="{{noticia.id}}">Excluir</button></td>
+                            <td><a href="edicao.php?id={{noticia.id}}" class="btn btn-default navbar-btn glyphicon glyphicon-pencil">Editar</a></td>
+                        </tr>
+                    </tbody>
+                {% endfor %}
+            </table>
+        </form>
+    </div>
+{% endblock %}

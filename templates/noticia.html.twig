@@ -1,0 +1,40 @@
+{% extends "template.html.twig" %}
+{% block styleSheet %}
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/estilo-noticia.css"/>
+{% endblock %}
+{% block body %}
+
+    <div class="conteudo" style="text-align: justify; width: 920px;">
+        <h5>{{noticia.publicacao}}</h5>
+        <h1>{{noticia.manchete}}</h1>
+        <h2 style="color: #4F4F4F; font-family: monospace;font-size: 25px;">{{noticia.subtitulo}}</h2>
+        <div class="container">
+            <div class=" img img-rounded">
+                <a class="btn" data-toggle="modal" data-target="#myModal">
+                    <img style="width: 550px; height: 250px; border-radius: 15px;" src=" ../../imagens/{{noticia.imagem}}"/>
+                </a>
+            </div>
+        </div>
+        <!-- Trigger the modal with a button -->
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content" style="width: 700px;">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{noticia.legenda_imagem}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <img src="../../imagens/{{noticia.imagem}}" style="width: 670px;"/>
+                    </div>
+                    <div 
+                        class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+                        <p >{{noticia.conteudo | nl2br }}</p>
+    </div>
+{% endblock %}

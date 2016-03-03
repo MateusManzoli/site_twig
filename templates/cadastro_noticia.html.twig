@@ -1,0 +1,63 @@
+{% extends "template.html.twig" %}
+{% block styleSheet %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../estilos-paginas/estilo-cadastro-noticia.css"/>
+{% endblock %}
+{% block body %}    
+    <div class="geral">
+        <form action="cadastro.php" class="form-horizontal-a" method="post" style="width: 700px;"> 
+            {{mensagem}}
+            <h2>Dados da Noticia</h2>
+            <input type="hidden" name="cadastrar" value="1">
+            <div class="form-group-a">
+                <label  class="col-sm-2 control-label">Publicação</label>
+                <div class="col-sm-10-a">
+                    <input name="publicacao" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group-a">
+                <label  class="col-sm-2 control-label">Manchete</label>
+                <div class="col-sm-10-a">
+                    <input name="manchete" type="text" class="form-control" id="inputEmail3" /><!required-->
+                </div>
+            </div>
+            <div class="form-group-a">
+                <label for="inputEmail3" class="col-sm-2 control-label">Subtitulo</label>
+                <div class="col-sm-10-a">
+                    <input name="subtitulo" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group-a">
+                <label for="inputEmail3" class="col-sm-2 control-label">Imagem</label>
+                <div class="col-sm-10-a">
+                    <input name="imagem" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group-a">
+                <label for="inputEmail3" class="col-sm-2 control-label">legenda_Imagem</label>
+                <div class="col-sm-10-a">
+                    <input name="legenda_imagem" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group-a">
+                <label  class="col-sm-2 control-label">Pagina</label>
+                <div class="col-sm-10-a">
+                    <select name="pagina" id="id" >
+                        <option>Escolha a Pagina</option>
+                        {% for categoria in categorias %}
+                            <option value="{{categoria.id}}"> {{categoria.nome}} </option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+            </div>
+            <h2>Conteudo</h2>
+            <textarea name="conteudo" class="form-control" ></textarea>
+            <div class="form-group-b">
+                <div class="col-sm-offset-2 col-sm-10-a">
+                    <button type="submit" class="btn btn-default" >Cadastrar</button>
+                </div>
+            </div>
+        </form> 
+    </div>
+{% endblock %}

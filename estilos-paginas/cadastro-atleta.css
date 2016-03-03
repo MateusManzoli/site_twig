@@ -1,0 +1,24 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18/09/2015, 16:21:12
+    Author     : DESEN
+*/
+
+body{
+    background-color: #e6e6e6;
+}
+
+.form-horizontal-a{
+    float: left;
+    width: 500px;
+}
+.form-group-b{
+    padding-top: 3px;
+    float: left;
+    width: 41%;
+}
+

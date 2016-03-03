@@ -1,0 +1,15 @@
+body{
+    background: #ebebeb;
+}
+.form-horizontal-a{
+    float: left;
+    width: 600px;
+}
+.col-sm-10-a{
+    padding: 5px;
+}
+.form-group-b{
+    float: left ;
+    width: 26%;
+}
+

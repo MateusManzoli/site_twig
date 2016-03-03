@@ -1,0 +1,34 @@
+{% extends "template.html.twig" %}
+{% block body %}
+
+    <div class="geral">
+        <form method="post" action="gerenciar.php" style="width: 600px;" style="width: 700px;">
+            {{mensagem}}
+            <input type="hidden" name="gol" value="1"/>
+            <table class="table table-bordered">
+                <thead class="thead">
+                <th>ID</th>
+                <th>PARTIDA</th>
+                <th>EQUIPE</th>
+                <th>ATLETA</th>
+                <th>MINUTO</th>
+                <th colspan="2">GERENCIAR</th>
+                </thead>
+                {% for gol in gols %}
+                    <tbody>
+                        <tr style="text-align: center;">
+                            <td>{{gol.id}}</td>
+                            <td>{{gol.partida_id}}</td>
+                            <td>{{gol.equipe_id}}</td>
+                            <td>{{gol.atleta_id}}</td>
+                            <td>{{gol.minuto}}</td>
+                            <!-- é necessario que o button tenha um name-->
+                            <td><button name="partida_gol_id" type="submit" class="btn btn-default navbar-btn" value="{{gol.id}}">Excluir</button></td>
+                            <td><a href="../gol_partida/editar.php?id={{gol.id}}" class="btn btn-default navbar-btn">Editar</a></td>
+                        </tr>
+                    </tbody>
+                {% endfor %}
+            </table>
+        </form>
+    </div>
+{% endblock %}

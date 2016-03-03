@@ -1,0 +1,22 @@
+{% extends "template.html.twig" %}
+{% block body %}
+    <div class="jumbotron">
+        <div class="row">
+            {% for noticia in noticias%}
+                <div class="col-md-6 col-lg-4">
+                    <div class="thumbnail">
+                        <a href="../../public/noticias/noticia.php?id={{noticia.id}}">
+                            <img class="img img-thumbnail" src="../../imagens/{{noticia.imagem}}"/>
+                            <div class="caption">
+                                <h4>{{noticia.manchete | slice(0, 34)}}</h4>
+                                <div class="well well-sm">
+                                    <h6>{{noticia.subtitulo | slice(0, 60)}}</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

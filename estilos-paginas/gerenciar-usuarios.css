@@ -1,0 +1,11 @@
+body{
+    background: #ebebeb;
+}
+.geral{
+    float: left;
+    max-width: 500px;
+    text-align: center;
+}
+.thead th{
+    text-align: center;
+}

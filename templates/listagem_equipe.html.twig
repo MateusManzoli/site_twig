@@ -1,0 +1,43 @@
+{% extends "template.html.twig" %}
+{% block styleSheet %}
+    <link rel = "stylesheet" type = "text/css" href = "../../estilos-paginas/gerenciar-usuarios.css"/>
+{% endblock %}
+{% block body %}
+    <div class = "geral" >
+        {{mensagem}}
+        <div class="row">
+            <div class="col-lg-6 col-md-8">
+                <form>
+                    <table class = "table table-bordered">
+                        <thead class = "thead">
+                        <th>ID</th>
+                        <th>Esporte</th>
+                        <th>Nome</th>
+                        <th>cidade</th>
+                        <th>presidente</th>
+                        <th colspan = "4">Gerenciar</th>
+                        </thead>
+                        <thead>
+                            {% for equipe in equipes %}
+                                <tr style = "text-align:center;" >
+                            <input type = "hidden" name = "equipe_id" id = "equipe" value = "{{equipe.id}}">
+                            <td>
+                                {{equipe.id}}
+                            </td>
+                            <td>
+                                {{equipe.esporte_id}}
+                            </td>
+                            <td>{{equipe.nome}}</td>
+                            <td>{{equipe.cidade}}</td>
+                            <td>{{equipe.presidente}}</td>
+                            <!--é necessario que o button tenha um name-->
+                            <td><button name = "excluir" type = "submit" class = "btn btn-default navbar-btn  glyphicon glyphicon-remove" value = "{{equipe.id}}">Excluir</button></td>
+                            <td><a href = "editar-equipe.php?id={{equipe.id}}" class = "btn btn-default navbar-btn glyphicon glyphicon-pencil">Editar</a></td>
+                            <td><a href = "../gerenciar-equipes-brasileirao/atletaEpatrocinio.php?equipe_id={{equipe.id}}" class = "btn btn-default navbar-btn">Patrocinio e Atleta</a></td>
+                        {% endfor %}
+                        </thead>
+                    </table>
+                </form>
+            </div>
+        </div>
+    {% endblock %}

@@ -1,0 +1,14 @@
+body{
+    background: #ebebeb;
+}
+.geral{
+    float: left;
+}
+.form-group-a{
+    width: 600px;
+}
+.form-group-b{
+    padding: 3px;
+    float: left;
+    width: 12%;
+}

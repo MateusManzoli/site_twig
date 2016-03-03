@@ -1,0 +1,18 @@
+{% extends "template.html.twig" %}
+{% block body %}
+    <div class="rodape" style='width: 100%;'>
+        <ul class="nav">
+            {% for categoria in categorias%}
+                <li>
+                <li><a href="{{categoria.link}}?categoria={{categoria.id}}" name="{{categoria.nome}}" > {{categoria.nome}}</a></li>
+                {% endfor %}
+
+            <li><a href="../musicas_aleatorias/musicas_aleatorias.php">Musicas</a></li>
+        </ul>
+        <div style="width: 100%;">
+            <ul class="nav" style="background: #363636; color: darkgrey; text-align: center;">
+                <li>©  2015 Noticias - O seu portal de noticias. Todos os direitos reservados-Mateus Manzoli Giacomin</li>
+            </ul>
+        </div>
+    </div>   
+{% endblock %}

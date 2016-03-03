@@ -1,0 +1,39 @@
+{% extends "template.html.twig" %}
+{% block body %}
+    <div class="geral">
+        <form method="post" action="gerenciar.php" style="width: 700px;">
+            <div class="row">
+                <div class="col-lg-6 col-md-8">
+                    <input type="hidden" name="publicar" value="1"/>
+                    {{mensagem}}
+                    <table class="table table-bordered">
+                        <thead class="thead">
+                        <th>ID</th>
+                        <th>Campeonato</th>
+                        <th>Rodada</th>
+                        <th>Local</th>
+                        <th>Data|Hora</th>
+                        <th> Equipe Mandante</th>
+                        <th> Equipe Visitante</th>
+                        <th colspan="2">Gerenciar</th>
+                        </thead>
+                        {% for partida in partidas %} 
+                            <tbody>
+                                <tr style="text-align: center; color: black;">
+                                    <td>{{partida.id}}</td>
+                                    <td>{{partida.campeonato_nome}}</td>
+                                    <td>{{partida.rodada_id}}</td>
+                                    <td>{{partida.local}}</td>
+                                    <td>{{partida.data}}</td>
+                                    {{partida.id}}
+                                    <td>{{partida.equipe_mandante_nome}}<a href="../gol_partida/cadastrar_golPartida.php?equipe_nome={{partida.equipe_mandante_nome}}&partida_id={{partida.id}}&equipe_id={{partida.equipe_mandante_id}}" class="btn btn-default navbar-btn">Gol</a></td>
+                                    <td>{{partida.equipe_visitante_nome}}<a href="../gol_partida/cadastrar_golPartida.php?equipe_nome={{partida.equipe_visitante_nome}}&partida_id={{partida.id}}&equipe_id={{partida.equipe_visitante_id}}" class="btn btn-default navbar-btn">Gol</a></td>
+                                    <td><a href="../partida/editar.php?id={{partida.id}}" class="btn btn-default navbar-btn">Editar</a></td>                                </tr>
+                            </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% endblock %}
