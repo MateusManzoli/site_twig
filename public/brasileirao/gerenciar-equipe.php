@@ -10,7 +10,7 @@ try {
 
     if (!empty($_POST['delete'])) {
         excluirEquipe($_POST['equipe_id']);
-        $retorno = "Equipe Excluir com êxito";
+        $retorno = "Equipe excluida com êxito";
     }
 } catch (Exception $e) {
     $retorno = $e->getMessage();

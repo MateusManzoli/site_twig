@@ -4,9 +4,10 @@
 {% endblock %}
 {% block body %}
     <div class = "geral" >
-        {{mensagem}}
+        
         <div class="row">
             <div class="col-lg-6 col-md-8">
+                {{mensagem}}
                 <form action="../brasileirao/gerenciar-equipe.php" method="post">
                     <input type = "hidden" name="delete" value="1">
                     <table class = "table table-bordered table-striped" >
