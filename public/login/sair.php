@@ -2,7 +2,7 @@
 
 include_once '../../dados/dados-head.php';
 include_once '../../app/funcoes/login/gerenciador-login.php';
-//include_once '../cabecalho/cabecalho.php';
+include_once '../../app/funcoes/tipo-noticia/gerenciar-tipoNoticia.php';
 
 try {
     $usuario = array();
@@ -15,7 +15,10 @@ try {
     $retorno = $e->getMessage();
 }
 
+$categorias = buscarCategorias();
+
 renderTemplate('login_sair', array(
-    'mensagem' => $retorno
+    'mensagem' => $retorno,
+    'categorias' => $categorias
 ));
 
