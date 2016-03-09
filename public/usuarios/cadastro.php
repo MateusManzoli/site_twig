@@ -24,4 +24,3 @@ renderTemplate('cadastro_usuario', array(
     'mensagem' => $retorno,
     'categorias' => $categorias
 ));
-
