@@ -22,24 +22,24 @@
                 <div class="form-group-a">
                     <label  class="col-sm-2 control-label">Nome</label>
                     <div class="col-sm-10-a">
-                        <input name="nome" type="text" class="form-control"  placeholder="Nome da Equipe" >
+                        <input name="nome" type="text" class="form-control"  placeholder="Nome da Equipe" required>
                     </div>
                 </div>
                 <div class="form-group-a" required>
                     <label for="inputEmail3" class="col-sm-2 control-label">cidade</label><br>
                     <div class="col-sm-10-a">
-                        <input name="cidade" type="text" class="form-control"  placeholder="Cidade Equipe">
+                        <input name="cidade" type="text" class="form-control"  placeholder="Cidade Equipe" required>
                     </div>
                 </div>
                 <div class="form-group-a" required>
                     <label for="inputEmail3" class="col-sm-2 control-label">Presidente</label><br>
                     <div class="col-sm-10-a">
-                        <input name="presidente" type="text" class="form-control"  placeholder="Presidente Equipe">
+                        <input name="presidente" type="text" class="form-control"  placeholder="Presidente Equipe" required>
                     </div>
                 </div>
                 <div class="form-group-b">
                     <div class="col-sm-offset-2 col-sm-10-a">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar Equipe</button>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" onClick="javascript: return confirm('Tem certeza que deseja cadastrar a Equipe?');>Cadastrar Equipe</button>
                     </div>
                 </div>
         </form>

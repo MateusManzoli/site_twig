@@ -12,7 +12,7 @@
         <div class="form-group-a">
             <label  class="col-sm-2 control-label">Rodada</label>
             <div class="col-sm-10-a">
-                <input name="rodada_id" type="text" class="form-control" maxlength="60" value="{{partida.rodada_id}}">
+                <input name="rodada_id" type="text" class="form-control" maxlength="60" value="{{partida.rodada_id}}"required>
             </div>
         </div> 
         <div class="form-group-a">
@@ -33,12 +33,12 @@
         <div class="form-group-a">
             <label  class="col-sm-2 control-label">data</label>
             <div class="col-sm-10-a">
-                <input name="data" type="text" class="form-control" maxlength="60" value="{{partida.data}}">
+                <input name="data" type="text" class="form-control" maxlength="60" value="{{partida.data}}"required>
             </div>
         </div>
         <div class="form-group-b">
             <div class="col-sm-offset-2 col-sm-10-a">
-                <button type="submit" class="btn btn-default">Alterar</button>
+                <button type="submit" class="btn btn-default" onClick="javascript: return confirm('Realmente deseja editar a partida?');">Alterar</button>
             </div>
         </div>
         <div class="col-sm-12-a col-md-12">

@@ -10,7 +10,8 @@ try {
 
     validarLogin($_POST['email'], $_POST['senha']);
 
-    $retorno = "Login realizado com sucesso !";
+    $retorno = "Login realizado com sucesso!"
+            . "Redirecione a pagina clicando no logo noticias.";
 } catch (Exception $e) {
     $retorno = $e->getMessage();
 }

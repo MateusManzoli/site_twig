@@ -12,31 +12,31 @@
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Publicação</label>
                 <div class="col-sm-10-a">
-                    <input name="publicacao" type="text" class="form-control"/>
+                    <input name="publicacao" type="text" class="form-control" required/>
                 </div>
             </div>
             <div class="form-group-a">
                 <label  class="col-sm-2 control-label">Manchete</label>
                 <div class="col-sm-10-a">
-                    <input name="manchete" type="text" class="form-control" id="inputEmail3" /><!required-->
+                    <input name="manchete" type="text" class="form-control" id="inputEmail3" required/><!required-->
                 </div>
             </div>
             <div class="form-group-a">
                 <label for="inputEmail3" class="col-sm-2 control-label">Subtitulo</label>
                 <div class="col-sm-10-a">
-                    <input name="subtitulo" type="text" class="form-control"/>
+                    <input name="subtitulo" type="text" class="form-control" required/>
                 </div>
             </div>
             <div class="form-group-a">
                 <label for="inputEmail3" class="col-sm-2 control-label">Imagem</label>
                 <div class="col-sm-10-a">
-                    <input name="imagem" type="text" class="form-control"/>
+                    <input name="imagem" type="text" class="form-control" required/>
                 </div>
             </div>
             <div class="form-group-a">
                 <label for="inputEmail3" class="col-sm-2 control-label">legenda_Imagem</label>
                 <div class="col-sm-10-a">
-                    <input name="legenda_imagem" type="text" class="form-control">
+                    <input name="legenda_imagem" type="text" class="form-control" required>
                 </div>
             </div>
             <div class="form-group-a">
@@ -52,10 +52,10 @@
                 </div>
             </div>
             <h2>Conteudo</h2>
-            <textarea name="conteudo" class="form-control" ></textarea>
+            <textarea name="conteudo" class="form-control" required></textarea>
             <div class="form-group-b">
                 <div class="col-sm-offset-2 col-sm-10-a">
-                    <button type="submit" class="btn btn-default" >Cadastrar</button>
+                    <button type="submit" class="btn btn-default" onClick="javascript: return confirm('Tem certeza que deseja cadastrar a Noticia?');>Cadastrar</button>
                 </div>
             </div>
         </form> 

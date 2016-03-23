@@ -3,5 +3,85 @@
     <link rel="stylesheet" type="text/css" href="../estilos-paginas/estilo-precesso-login.css"/>
 {% endblock %}
 {% block body %}
-    <h1>{{mensagem}}</h1>
+    <script language="javascript" type="text/javascript">
+        dataatual = new Date();
+        switch (dataatual.getDay()) {
+            case 0:
+                dia = "Domingo";
+                break;
+            case 1:
+                dia = "Segunda-Feira";
+                break;
+            case 2:
+                dia = "Terça-Feira";
+                break;
+            case 3:
+                dia = "Quarta-Feira";
+                break;
+            case 4:
+                dia = "Quinta-Feira";
+                break;
+            case 5:
+                dia = "Sexta-Feira";
+                break;
+            case 6:
+                dia = "Sabado";
+                break;
+        }
+
+        switch (dataatual.getMonth()) {
+            case 0:
+                mes = "Janeiro";
+                break;
+            case 1:
+                mes = "Fevereiro";
+                break;
+            case 2:
+                mes = "Março";
+                break;
+            case 3:
+                mes = "Abril";
+                break;
+            case 4:
+                mes = "Maio";
+                break;
+            case 5:
+                mes = "Junho";
+                break;
+            case 6:
+                mes = "Julho";
+                break;
+            case 7:
+                mes = "Agosto";
+                break;
+            case 8:
+                mes = "Setembro";
+                break;
+            case 9:
+                mes = "Outubro";
+                break;
+            case 10:
+                mes = "Novembro";
+                break;
+            case 11:
+                mes = "Dezembro";
+                break;
+        }
+
+        if (dataatual.getHours() >= 0 && dataatual.getHours() <= 6) {
+            saudacao = "Boa Madrugada!";
+        }
+        if (dataatual.getHours() > 6 && dataatual.getHours() <= 12) {
+            saudacao = "Bom Dia!";
+        }
+        if (dataatual.getHours() > 12 && dataatual.getHours() <= 20) {
+            saudacao = "Boa Tarde!";
+        }
+        if (dataatual.getHours() > 20) {
+            saudacao = "Boa Noite!";
+        }
+        alert("Olá, Hoje é " + " " + dia + " dia " + dataatual.getDate() + " de " + mes + " , " + saudacao);
+
+    </script>
+    <h4>{{mensagem}}</h4>
 {% endblock %}

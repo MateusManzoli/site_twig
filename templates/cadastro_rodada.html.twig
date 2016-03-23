@@ -22,12 +22,12 @@
         <div class="form-group-a">
             <label  class="col-sm-2 control-label">Rodada</label>
             <div class="col-sm-10-a">
-                <input name="numero" type="text" class="form-control" maxlength="60" placeholder="Rodada">
+                <input name="numero" type="text" class="form-control" maxlength="60" placeholder="Rodada" required>
             </div>
         </div> 
         <div class="form-group-b">
             <div class="col-sm-offset-2 col-sm-10-a">
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" onClick="javascript: return confirm('Tem certeza que deseja cadastrar a rodada?');>Cadastrar</button>
             </div>
         </div>
     </form>
